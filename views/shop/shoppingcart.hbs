@@ -1,0 +1,42 @@
+{{# if products}}
+    <div class="row">
+    <div class="col-sm-6 col-md-6 coll-md-offset-3 coll-sm-offset-3">
+         <ul class="list-group">
+             {{# each products}}
+                <li class="list-group-item">
+                    <strong>{{this.item.title}}</Strong>
+                    <span class="label label-success">${{this.price}}</span>
+                    <div class="btn-group float-end">
+                        <button type="button" class="btn btn-danger dropdown-toggle " data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Change
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Remove</a>
+                        </div>
+                    </div>
+                    <span class="badge bg-secondary">{{this.qty}}</span>
+                </li>
+             {{/each}}
+         </ul>       
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-md-6 coll-md-offset-3 coll-sm-offset-3">
+        <strong>Total: ${{totalPrice}}</strong>      
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-6 col-md-6 coll-md-offset-3 coll-sm-offset-3">
+        <button type="button" class="btn btn-success">Checkout</button>
+    </div>
+</div>
+{{else}}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 coll-md-offset-3 coll-sm-offset-3">
+            <h2>No Items in Cart</h2>
+        </div>
+    </div>
+{{/if}}
+
