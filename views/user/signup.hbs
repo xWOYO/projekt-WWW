@@ -4,7 +4,8 @@
         {{#if isError}}
             <div class="alert alert-danger">{{#each message}}
                 <p>{{this}}</p>
-                {{/each}}</div>
+                {{/each}}
+            </div>
         {{/if}}
         <form action="/user/signup" method="post">
             <divclass="form-group">
