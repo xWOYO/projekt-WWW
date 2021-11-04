@@ -18,18 +18,11 @@ router.use('/', notLogged, function(req, res, next){
     next();
 });
 
-// router.get('/user/signup', function(req, res, next){
-//   res.render('user/signup', {csrfToken: req.csrfToken()});
-// });
 
 router.get('/signup', function(req, res, next){
     var fmessage = req.flash('error');
     res.render('user/signup', {message: fmessage, isError: fmessage.length > 0});
   });
-  
-  // router.post('/user/signup', function(req, res, next){
-  //   res.redirect('/user/profile');
-  // });
   
   router.post('/signup', passport.authenticate('local.signup', {
     successRedirect: '/user/profile',
